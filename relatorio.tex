@@ -1,0 +1,188 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Modelo de relatório de Disciplina de MLP a partir da
+% classe latex iiufrgs disponivel em http://github.com/schnorr/iiufrgs
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Ignore o comentario acima e imagine que exista um modelo de relatorio de CCI em algum lugar
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Definição do tipo / classe de documento e estilo usado
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+\documentclass{iiufrgs}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Importação de pacotes
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% (a A seguir podem ser importados os pacotes necessários para o documento, de acordo 
+% com a necessidade)
+%
+\usepackage[brazilian]{babel}	    % para texto escrito em pt-br
+\usepackage[utf8]{inputenc}         % pacote para acentuação
+\usepackage{graphicx}         	    % pacote para importar figuras
+\usepackage[T1]{fontenc}            % pacote para conj. de caracteres correto
+\usepackage{times}                  % pacote para usar fonte Adobe Times
+\usepackage{enumerate}              % para lista de itens com letras
+\usepackage{breakcites}
+%\usepackage{tikz}
+%\usepackage[oldvoltagedirection]{circuitikzgit}
+\usepackage{caption}
+\usepackage{siunitx}
+\usepackage{placeins}
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{titletoc}
+\usepackage{subfig}
+%\usepackage{listings}			    % para listagens de código-fonte
+\usepackage{mathptmx}               % p/ usar fonte Adobe Times nas formulas matematicas
+\usepackage{url}                    % para formatar URLs
+%\usepackage{color}				    % para imagens e outras coisas coloridas
+%\usepackage{fixltx2e}              % para subscript
+%\usepackage{amsmath}               % para \epsilon e matemática
+%\usepackage{amsfonts}
+%\usepackage{setspace}			    % para mudar espaçamento dos parágrafos
+%\usepackage[table,xcdraw]{xcolor}  % para tabelas coloridas
+%\usepackage{longtable}             % para tabelas compridas (mais de uma página)
+%\usepackage{float}
+%\usepackage{booktabs}
+%\usepackage{tabularx}
+%\usepackage{hyperref}
+
+\usepackage[alf,abnt-emphasize=bf]{abntex2cite}	% pacote para usar citações abnt
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Macros, ajustes e definições
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+
+% define estilo de parágrafo para citação longa direta:
+\newenvironment{citacao}{
+    %\singlespacing
+    %\footnotesize
+    \small
+    \begin{list}{}{
+        \setlength{\leftmargin}{4.0cm}
+        \setstretch{1}
+        \setlength{\topsep}{1.2cm}
+        \setlength{\listparindent}{\parindent}
+    }
+    \item[]}{\end{list}
+}
+
+% adiciona a fonte em figuras e tabelas
+\newcommand{\fonte}[1]{\\Fonte: {#1}}
+
+\newcommand{\titlepagespecificinfo}{Relatório apresentado como requisito parcial para a obtenção de conceito na Disciplina de Métodos Ágeis.}
+% \def\@cipspecificinfo{Concepção de Circuitos Integrados}
+
+
+% Ative o seguinte caso alguma nota de rodapé fique muito longa e quebre entre múltiplas
+% páginas
+%\interfootnotelinepenalty=10000
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Informações gerais                                   
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% título
+\title{RELATÓRIO DO TRABALHO FINAL} 
+
+% autor
+%\author{Autores(s)}{Aluno(s)} % {sobrenome}{nome}
+\author{Corrêa Pereira da Silva}{Henrique}
+
+% Professor orientador da disciplina
+\advisor[Profa.~Dra.]{Becker}{Karin}
+
+% Nome do(s) curso(s):
+\course{Curso de Graduação em Ciência da Computação}
+
+% local da realização do trabalho 
+\location{Porto Alegre}{RS} 
+
+% data da entrega do trabalho (mês e ano)
+\date{6}{2018}
+
+
+% Palavras chave
+\keyword{SCRUM}
+\keyword{SCRUM Master}
+\keyword{Retrospectiva}
+\keyword{Métodos Ágeis}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Início do documento e elementos pré-textuais
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Declara início do documento
+\begin{document}
+
+% inclui folha de rosto 
+\maketitle
+
+\selectlanguage{brazilian}
+
+% Sumario
+\tableofcontents
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Aqui comeca o texto propriamente dito
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%espaçamento entre parágrafos
+%\setlength{\parskip}{6 pt}
+
+\selectlanguage{brazilian}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Introdução
+%
+
+%Este capítulo tem o objetivo de descrever os detalhes necessários à correta formatação do documento. As informações aqui apresentadas devem ser suficientes para formatar corretamente o documento no ambiente \LaTeX.
+
+%Os \textbf{Capítulos} são sempre iniciados com o comando \texttt{\char'134chapter}, que coloca-os em uma nova folha, em letras maiúsculas, numerados e  alinhados à esquerda. Para os \textbf{capítulos não-numerados} (Listas, Resumo, Abstract, Referências, etc.), o título é centralizado na linha Para tanto, usar o comando \texttt{\char'134chapter*}. Para ambos, são deixados 90 pt de espaçamento anterior (ou seja, distância da margem superior) e 42 pt de espaçamento posterior (espaço até o início do texto ou primeira subdivisão). 
+
+%Todos os \textbf{demais parágrafos de texto} são escritos em espaçamento simples, com observância de 6 pt de espaçamento em relação ao parágrafo seguinte. O estilo atual já considera essas retrições. 
+
+
+%As demais subdivisões do texto (seções, subseções, etc.) são formatadas com o título alinhado sempre à esquerda, precedido da respectiva numeração. Para tanto, no \LaTeX, você deve utilizar os comandos \texttt{\char'134section},  \texttt{\char'134subsection} e  \texttt{\char'134subsubsection}.
+
+%São permitidas subdivisões até o 5º nível (onde o capítulo é o 1º. nível), porém no sumário inclui-se somente os títulos até o nível 3\footnote{O formato adotado pela ABNT prevê apenas três níveis (capítulo, seção e subseção).}. Assim, \texttt{\char'134subsubsection} não é aconselhado. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Intro
+%
+
+\chapter{Introdução}\label{intro}
+
+Neste relatório, dissertarei sobre a importância de reuniões de retrospectiva no framework SCRUM e também sobre o papel do SCRUM \textit{master} nessas reuniões. 
+
+No primeiro momento, focarei sobre os conceitos de melhoria incremental de métodos ágeis e sobre quais são as responsabilidades de um SCRUM \textit{master} na metodologia em si. Logo após, comentarei sobre as reuniões em si\footnote{no caso as \textit{Dailies}, as de \textit{Sprint} e as de Retrospectiva}, o que é abordado nelas, suas características e o comportamento esperado da equipe nelas. Por último, abordarei algumas atividades que podem ser realizadas numa reunião para obter resultados mais facilmente.
+
+É importante lembrar que todas as observações realizadas neste relatório não correspondem a algum experiência prévia, sendo este um trabalho puramente teórico.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Prefacio
+%
+
+\chapter{Prefácio}\label{pref}
+
+Para o melhor entendimento de qualquer situação devemos possuir o correto contexto dessa mesma. Logo, neste capítulo abordarei alguns conceitos fundamentais de metodologias ágeis e questionarei o porquê por trás da decisão de adotar uma metodologia ágil. Não obstante, também abodarei o conceito de coaching, o papel do SCRUM \textit{master} no SCRUM e o que ele faz para alcançar seus objetivos.
+
+Construído ou relembrado o contexto da discussão, estaremos prontos para discutir sobre as reuniões de fato.
+
+\section{Sobre SCRUM}\label{scrum}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{abntex2-alf}
+\bibliography{biblio} 
+
+\end{document}
