@@ -24,15 +24,15 @@
 \usepackage{times}                  % pacote para usar fonte Adobe Times
 \usepackage{enumerate}              % para lista de itens com letras
 \usepackage{breakcites}
-%\usepackage{tikz}
-%\usepackage[oldvoltagedirection]{circuitikzgit}
 \usepackage{caption}
 \usepackage{siunitx}
 \usepackage{placeins}
 \usepackage{titlesec}
 \usepackage{enumitem}
 \usepackage{titletoc}
+\usepackage{epigraph}
 \usepackage{subfig}
+\usepackage{csquotes}
 %\usepackage{listings}			    % para listagens de código-fonte
 \usepackage{mathptmx}               % p/ usar fonte Adobe Times nas formulas matematicas
 \usepackage{url}                    % para formatar URLs
@@ -72,9 +72,7 @@
 % adiciona a fonte em figuras e tabelas
 \newcommand{\fonte}[1]{\\Fonte: {#1}}
 
-\newcommand{\titlepagespecificinfo}{Relatório apresentado como requisito parcial para a obtenção de conceito na Disciplina de Métodos Ágeis.}
-% \def\@cipspecificinfo{Concepção de Circuitos Integrados}
-
+\newcommand{\titlepagespecificinfo}{Relatório apresentado como requisito parcial para a obtenção de conceito na disciplina de Métodos Ágeis.}
 
 % Ative o seguinte caso alguma nota de rodapé fique muito longa e quebre entre múltiplas
 % páginas
@@ -85,7 +83,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % título
-\title{RELATÓRIO DO TRABALHO FINAL} 
+\title{REUNIÕES RETROSPECTIVAS EM SCRUM NA PERSPECTIVA DO SCRUMMASTER} 
 
 % autor
 %\author{Autores(s)}{Aluno(s)} % {sobrenome}{nome}
@@ -105,8 +103,8 @@
 
 
 % Palavras chave
-\keyword{SCRUM}
-\keyword{SCRUM Master}
+\keyword{Scrum}
+\keyword{ScrumMaster}
 \keyword{Retrospectiva}
 \keyword{Métodos Ágeis}
 
@@ -125,8 +123,6 @@
 
 % Sumario
 \tableofcontents
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Aqui comeca o texto propriamente dito
@@ -153,32 +149,80 @@
 %São permitidas subdivisões até o 5º nível (onde o capítulo é o 1º. nível), porém no sumário inclui-se somente os títulos até o nível 3\footnote{O formato adotado pela ABNT prevê apenas três níveis (capítulo, seção e subseção).}. Assim, \texttt{\char'134subsubsection} não é aconselhado. 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Intro
 %
 
 \chapter{Introdução}\label{intro}
 
-Neste relatório, dissertarei sobre a importância de reuniões de retrospectiva no framework SCRUM e também sobre o papel do SCRUM \textit{master} nessas reuniões. 
+Neste relatório, dissertarei sobre a importância de reuniões de retrospectiva no framework Scrum e também sobre o papel do \textit{ScrumMaster} nessas reuniões. 
 
-No primeiro momento, focarei sobre os conceitos de melhoria incremental de métodos ágeis e sobre quais são as responsabilidades de um SCRUM \textit{master} na metodologia em si. Logo após, comentarei sobre as reuniões em si\footnote{no caso as \textit{Dailies}, as de \textit{Sprint} e as de Retrospectiva}, o que é abordado nelas, suas características e o comportamento esperado da equipe nelas. Por último, abordarei algumas atividades que podem ser realizadas numa reunião para obter resultados mais facilmente.
+No primeiro momento, focarei sobre os conceitos de melhoria incremental de métodos ágeis e sobre quais são as responsabilidades de um \textit{ScrumMaster} na metodologia em si. Logo após, comentarei sobre as reuniões em si\footnote{no caso as \textit{Dailies}, as de revisão da \textit{Sprint} e as de Retrospectiva da \textit{Sprint}}, o que é abordado nelas, suas características e o comportamento esperado da equipe nelas. Por último, abordarei algumas atividades que podem ser realizadas numa reunião para obter resultados mais facilmente.
 
-É importante lembrar que todas as observações realizadas neste relatório não correspondem a algum experiência prévia, sendo este um trabalho puramente teórico.
+É importante lembrar que todas as observações realizadas neste relatório não correspondem a alguma experiência prévia do autor deste relatório, sendo este um trabalho puramente teórico.
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Prefacio
 %
 
 \chapter{Prefácio}\label{pref}
 
-Para o melhor entendimento de qualquer situação devemos possuir o correto contexto dessa mesma. Logo, neste capítulo abordarei alguns conceitos fundamentais de metodologias ágeis e questionarei o porquê por trás da decisão de adotar uma metodologia ágil. Não obstante, também abodarei o conceito de coaching, o papel do SCRUM \textit{master} no SCRUM e o que ele faz para alcançar seus objetivos.
+Para o melhor entendimento de qualquer situação devemos possuir o correto contexto dessa mesma. Logo, neste capítulo abordarei alguns conceitos fundamentais de metodologias ágeis e questionarei o porquê por trás da decisão de adotar uma metodologia ágil. Não obstante, também abodarei o conceito de coaching, o papel do \textit{ScrumMaster} no Scrum e o que ele faz para alcançar seus objetivos.
 
 Construído ou relembrado o contexto da discussão, estaremos prontos para discutir sobre as reuniões de fato.
 
-\section{Sobre SCRUM}\label{scrum}
+
+% Sobre Scrum %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Sobre Scrum}\label{Scrum}
+
+Em grande parte das vezes, instituições tem grandes esperanças ao decidir adotar uma metodologia ágil. Dentre essas esperanças, podemos citar:
+
+\begin{itemize}[leftmargin=3em, noitemsep, nosep, before=\vspace{1cm}, after=\vspace{1cm}]
+    \setlength{\itemindent}{1em}
+    \item Software de maior qualidade;
+    \item Menor \textit{Time-To-Market};
+    \item Menores custos de produção; 
+    \item Maior satisfação do usuário final; 
+    \item Mais features por entrega;
+    \item Equipe mais engajada.
+\end{itemize}
+
+Além de outros motivos, claro. Tal é a esperança dessas instituições dentre muitas que gastam quantias consideráveis de dinheiro na transição para uma metodologia ágil, e que, assim, esperam resultados o mais cedo possível para justificar esses gastos.
+
+O que \textit{CEO's}, diretores e gerentes esquecem é que ser ágil significa mais que dividir o desenvolvimento em ciclos de duas semanas. Ser ágil significa priorizar o cliente, dar poder ao time, e, acima de tudo, melhorar constantemente.
+
+\subsection{Kaizen}\label{kaizen}
+
+\epigraph{[...] there is something called standard work, but standards should be changed constantly. Instead, if you think of the standards as the best you can do, it's all over.}{-- \textit{Taiichi Ohno}}
+
+Talvez alguém numa posição importante numa empresa tenha lido um livro sobre \textit{Extreme Programming} e tenha decidido que este é a metodologia correta pra empresa. Talvez essa pessoa tenha lido algum outro livro sobre alguma outra metodologia ágil e tenha chegado a conclusão que o \textit{approach} é perfeito para a situação da sua empresa. Muito provavelmente, essa pessoa está errada \cite{Cohn2009Succeeding}.
+
+Nenhum processo é perfeito para a empresa em questão. Talvez algum deles seja um melhor ponto inicial que os outros, mas é inevitável que o processo deverá ser adaptado e customizado para a realidade desta empresa, o que será essencial para o sucesso dessa enquanto praticar alguma metodologia ágil. Por mais que muitos compartilhem a opinião do que significa Scrum neste exemplo, é impossível dizer como que será o estado \enquote{final} de um processo que busca melhoria contínua \cite{Cohn2009Succeeding}.
+
+\subsection{\enquote{Melhores} práticas}\label{melhores}
+
+Pelos motivos apresentados na subseção \ref{kaizen} que não podemos nos tentar a criar \enquote{mandamentos} ditando \enquote{melhores práticas}, qualquer que seja o escopo dessa \enquote{melhor} prática. Por mais tentadora que seja essa ideia, devemos evitar fazer isso, já que ao definir um limite superior\footnote{ou seja, \enquote{não podemos fazer melhor que isso} ou \enquote{esse é comprovadamente o melhor jeito de fazer isso}} estamos nos privando da melhoria constante, conceito central ao Scrum e à ideologia \textit{Kaizen}, conhecida pelo Modelo de Produção Toyota.
+
+Logo, devemos sempre buscar e estimular nossas próprias práticas, que serão relevantes a nossa realidade no atual dado momento, sem seguir cegamente conselhos de gurus ou ditos \textit{\enquote{experts}}. 
+
+\subsection{Conclusão}
+
+Todos esses motivos apresentados culminam, finalmente, nos conceitos pregados pelo framework Scrum. Definido como um framework \textit{lightweight}, que, ao contrário de um processo como XP, não prescreve práticas técnicas e foca em práticas gerenciais. Tudo isso é alcançado ao analizar o andamento do projeto e do processo em si nas reuniões diárias, de revisão e de retrospectiva.
 
 
+% Sobre Coaching %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Sobre coaching}\label{coaching}
+
+Por definição, \textit{coaching} consiste de uma série de conversas hábeis em que o \textit{coach} ajuda o \textit{coachee} a ver novas perspectivas e possibilidades. A partir disso, o \textit{coachee} pode imaginar o seu próximo passo em direção ao seu crescimento profissional e pessoal e agir para colocar em ação esse passo \cite{Adkins2010Coaching}. No contexto de times ágeis, sim, teremos que dividir o papel do coach ágil entre \textit{coaching} de fato e entre mentorar.
+
+Como coach ágil, você ainda está ajudando alguém a atingir seu próximo objetivo. Como coach ágil, você também está compartilhando experiências e valores, guiando o \textit{coachee} ao uso efetivo dos princípios Scrum, por exemplo. Com isso, nessa seção veremos o que significa ser e agir como um coach ágil e como utilizar esses conhecimentos para dar ao time a oportunidade de criar coisas incríveis.
+
+\subsection{O que é}
+
+\epigraph{Have compassion for each person's journey so they know you honor where they are as you help them become what they want to be. When they know--and feel--that you are loving and compassionate towards them, they can shed the posturing and preening and get real with you.}{-- \textit{Lyssa Adkins}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
